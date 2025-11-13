@@ -2,11 +2,11 @@
 layout: post
 title: "Cheese Tryhackme (easy)-Writeup"
 date: 2025-11-13 2:00:00 +0000
-author: sh4de00
+author: Kingston Kwabena Anab
 categories: [CTF, Writeup]
 tags: [tryhackme]
 ---
-![](/assets/cheese-thm/618b3fa52f0acc0061fb0172-1718375657104%20(3).png)
+
 ### Reconnaissance And Scanning
 I was provided with the IP of the target so I fired `nmap` at it to discover the open ports.
 ```bash
