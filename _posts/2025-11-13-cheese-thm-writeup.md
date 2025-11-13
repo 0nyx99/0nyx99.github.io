@@ -148,7 +148,6 @@ sudo /bin/systemctl enable exploit.timer
 LFILE=/root/root.txt
 ```
 
-![](/assets/cheese-thm/26.png)
 ![](/assets/cheese-thm/27.png)
 
 Afterwards, I listed the content of `/opt` and saw that `xxd` has been added.
