@@ -6,7 +6,7 @@ author: sh4de00
 categories: [CTF, Writeup]
 tags: [tryhackme]
 ---
-![](/assets/cheese-thm/resized.png)
+![](/assets/cheese-thm/618b3fa52f0acc0061fb0172-1718375657104%20(3).png)
 ### Reconnaissance And Scanning
 I was provided with the IP of the target so I fired `nmap` at it to discover the open ports.
 ```bash
