@@ -13,4 +13,5 @@ I'm Kingston Kwabena Anab, also known as *0nyx*. I'm an *Offensive Security enth
 <ul>
     <li>Google Cybersecurity</li>
     <li>Inveteck Global Cetified Ethical Hacker (IGCEH)</li>
+    <li>ISC2 CC</li>
 </ul>
