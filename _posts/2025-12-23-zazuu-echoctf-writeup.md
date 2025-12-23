@@ -15,7 +15,11 @@ nmap -v -sV <target_ip>
 ![](/assets/zazuu%20echoctf/1.png)
 
 ### Enumeration
-I visited the web application and got greeted with a nice web application named Birdim. After further navigation, I decided to fuzz the site to discover subdomains.
+I visited the web application and got greeted with a nice web application named Birdim. 
+
+![](/assets/zazuu%20echoctf/2.png)
+
+After further navigation, I decided to fuzz the site to discover subdomains.
 ```bash
 ffuf -u <url>/FUZZ -w /usr/share/seclists/Discovery/Web-Content/common.txt
 ```
